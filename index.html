@@ -1,13 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Parcel Sandbox</title>
-    <meta charset="UTF-8" />
-  </head>
+    <meta charset="UTF-8"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
 
-  <body>
+<body>
+<div class="title">Request Animation Frame</div>
+<div id="raf" class="demoGroup">
+    <div class="stats">
+        <div class="sps fpsContainer">
+            <div>Frames Per Second</div>
+            <div class="fps">0</div>
+        </div>
+        <div class="sps upsContainer">
+            <div>Updates Per Second</div>
+            <div class="ups">0</div>
+        </div>
+        <div class="sps upsContainer">
+            <div>Pixels Per Second</div>
+            <div class="pps">0</div>
+        </div>
+    </div>
     <div class="canvasContainer"></div>
+    <div class="controls">
+    </div>
+</div>
 
-    <script src="src/index.ts"></script>
-  </body>
+<div class="title">Simple Stepper</div>
+<div id="nonraf" class="demoGroup">
+    <div class="stats">
+        <div class="sps fpsContainer">
+            <div>Frames Per Second</div>
+            <div class="fps">0</div>
+        </div>
+        <div class="sps upsContainer">
+            <div>Updates Per Second</div>
+            <div class="ups">0</div>
+        </div>
+        <div class="sps upsContainer">
+            <div>Pixels Per Second</div>
+            <div class="pps">0</div>
+        </div>
+    </div>
+    <div class="canvasContainer"></div>
+    <div class="controls">
+        <div class="controlGroup js-speed">
+            <div class="label">Speed</div>
+            <input type="range" min="0" max="1000" value="100" step="10">
+            <div class="value"></div>
+        </div>
+    </div>
+</div>
+
+<script src="src/index.ts"></script>
+</body>
 </html>
