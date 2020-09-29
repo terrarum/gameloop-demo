@@ -6,8 +6,6 @@ const speedSliderEl = document.querySelector('#nonraf .js-speed input');
 const speedValueEl = document.querySelector('#nonraf .js-speed .value');
 const ppsEl = document.querySelector('#nonraf .pps');
 
-if (ppsEl === null) throw new Error("ppsEl missing from nonraf");
-
 const ups = new SPS('#nonraf .ups')
 const fps = new SPS('#nonraf .fps')
 
@@ -53,6 +51,9 @@ export default function(): void {
 
         renderRect(square, context);
 
+        if (ppsEl === null) {
+            throw new Error("ppsEl missing from nonraf")
+        }
         ppsEl.innerHTML = (Math.round(distance * (1000 / duration))).toString();
 
         context.closePath();
