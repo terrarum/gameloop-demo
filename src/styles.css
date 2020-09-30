@@ -52,11 +52,22 @@ html, body {
   flex-direction: column;
 }
 
-.sps {
+.stat {
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
   background-color: lightgray;
   padding: 5px;
   margin: 0 5px 5px 0;
+}
+
+.buttons {
+  display: flex;
+}
+
+.stats button {
+  position: relative;
+  width: 50%;
+  margin: 0 5px 5px 0;
+  text-align: center;
 }

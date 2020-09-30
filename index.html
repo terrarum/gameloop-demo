@@ -10,17 +10,21 @@
 <div class="title">Request Animation Frame</div>
 <div id="raf" class="demoGroup">
     <div class="stats">
-        <div class="sps fpsContainer">
+        <div class="stat fpsContainer">
             <div>Frames Per Second</div>
             <div class="fps">0</div>
         </div>
-        <div class="sps upsContainer">
+        <div class="stat upsContainer">
             <div>Updates Per Second</div>
             <div class="ups">0</div>
         </div>
-        <div class="sps upsContainer">
+        <div class="stat upsContainer">
             <div>Pixels Per Second</div>
             <div class="pps">0</div>
+        </div>
+        <div class="buttons">
+            <button class="play">Play/Pause</button>
+            <button class="reset">Reset</button>
         </div>
     </div>
     <div class="canvasContainer"></div>
@@ -29,19 +33,23 @@
 </div>
 
 <div class="title">Simple Stepper</div>
-<div id="nonraf" class="demoGroup">
+<div id="simplestepper" class="demoGroup">
     <div class="stats">
-        <div class="sps fpsContainer">
+        <div class="stat fpsContainer">
             <div>Frames Per Second</div>
             <div class="fps">0</div>
         </div>
-        <div class="sps upsContainer">
+        <div class="stat upsContainer">
             <div>Updates Per Second</div>
             <div class="ups">0</div>
         </div>
-        <div class="sps upsContainer">
-            <div>Pixels Per Second</div>
+        <div class="stat upsContainer">
+            <div>Target Pixels/Second</div>
             <div class="pps">0</div>
+        </div>
+        <div class="buttons">
+            <button class="play">Play/Pause</button>
+            <button class="reset">Reset</button>
         </div>
     </div>
     <div class="canvasContainer"></div>
@@ -51,6 +59,20 @@
             <input type="range" min="0" max="1000" value="100" step="10">
             <div class="value"></div>
         </div>
+    </div>
+</div>
+
+<div class="title">Behold, a Square</div>
+<div id="updaterender" class="demoGroup">
+    <div class="stats">
+        <div class="buttons">
+            <button class="update">Update</button>
+            <button class="render">Render</button>
+        </div>
+        <pre class="square"></pre>
+    </div>
+    <div class="canvasContainer"></div>
+    <div class="controls">
     </div>
 </div>
 

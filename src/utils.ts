@@ -1,4 +1,10 @@
 import { Rect } from './interfaces';
+import { canvasObject, canvasOptions, createCanvas } from 'simple-gameloop';
+
+export function updateRect(rect: Rect, distance: number, element: HTMLCanvasElement) {
+    rect.x += distance;
+    rect.x = rect.x > element.width ? rect.x - element.width : rect.x;
+}
 
 export function renderRect(rect: Rect, context: CanvasRenderingContext2D) {
     const canvas = context.canvas;
@@ -18,4 +24,15 @@ export function createSquare(): Rect {
         height: 100,
         color: '#000000',
     }
+}
+
+export function easyCanvas(baseId: string): canvasObject {
+    const canvasOptions: canvasOptions = {
+        width: 800,
+        height: 200,
+        classes: 'canvas js-canvas',
+        containerSelector: `${baseId} > .canvasContainer`,
+    }
+
+    return createCanvas(canvasOptions);
 }

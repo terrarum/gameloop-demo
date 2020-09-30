@@ -22,7 +22,7 @@ export default class {
         this.frames++;
         const time = performance.now();
         if (time >= this.prevTime + 1000) {
-            const value = Math.round((this.frames * 1000) / (time - this.prevTime));
+            const value = ((this.frames * 1000) / (time - this.prevTime)).toFixed(5);
             this.element.innerHTML = value.toString();
 
             this.prevTime = time;
