@@ -28,7 +28,7 @@ export function createSquare(): Rect {
 
 export function easyCanvas(baseId: string): canvasObject {
     const canvasOptions: canvasOptions = {
-        width: 800,
+        width: 900,
         height: 200,
         classes: 'canvas js-canvas',
         containerSelector: `${baseId} > .canvasContainer`,

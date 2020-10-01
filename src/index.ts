@@ -4,7 +4,8 @@ import buttons from './slides';
 import intro from './intro';
 import simpleStepper from './simplestepper';
 import updateRender from './updaterender';
-import euler1 from './euler1';
+import fixedupdaterate from './fixedupdaterate';
+import variableupdaterate from './variableupdaterate';
 import raf from './raf';
 
 buttons();
@@ -12,5 +13,6 @@ buttons();
 intro();
 updateRender();
 simpleStepper();
-euler1();
+fixedupdaterate();
+variableupdaterate();
 raf();

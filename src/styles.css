@@ -8,6 +8,15 @@ html, body {
   height: 100%;
 }
 
+label {
+  padding-right: 5px;
+  min-width: 30px;
+}
+
+.value {
+  padding-left: 8px;
+}
+
 .hidden {
   display: none;
 }

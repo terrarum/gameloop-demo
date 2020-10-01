@@ -13,6 +13,7 @@
     <button id="three">Three</button>
     <button id="four">Four</button>
     <button id="five">Five</button>
+    <button id="six">Six</button>
     <button id="all">All</button>
 </div>
 
@@ -58,16 +59,12 @@
                 <div>Target Pixels/Second</div>
                 <div class="pps">0</div>
             </div>
-            <div class="buttons">
-                <button class="play">Play/Pause</button>
-                <button class="reset">Reset</button>
-            </div>
         </div>
         <div class="canvasContainer"></div>
         <div class="controls">
             <div class="controlGroup js-speed">
-                <label for="simpstep-speed">Speed</label>
-                <input id="simpstep-speed" type="range" min="0" max="1000" value="100" step="10">
+                <label for="simpstep-speed">MS</label>
+                <input id="simpstep-speed" type="range" min="1" max="1000" value="100" step="10">
                 <div class="value"></div>
             </div>
         </div>
@@ -75,8 +72,36 @@
 </div>
 
 <div class="slide four">
-    <div class="title">Euler Integration</div>
-    <div id="euler1" class="demoGroup">
+    <div class="title">Fixed Update Rate</div>
+    <div id="fixedupdaterate" class="demoGroup">
+        <div class="stats">
+            <div class="stat fpsContainer">
+                <div>Frames Per Second</div>
+                <div class="fps">0</div>
+            </div>
+            <div class="stat upsContainer">
+                <div>Updates Per Second</div>
+                <div class="ups">0</div>
+            </div>
+            <div class="stat upsContainer">
+                <div>Pixels Per Second</div>
+                <div class="pps">0</div>
+            </div>
+        </div>
+        <div class="canvasContainer"></div>
+        <div class="controls">
+            <div class="controlGroup js-fps">
+                <label for="fixedupdaterate-fps">FPS</label>
+                <input id="fixedupdaterate-fps" type="range" min="1" max="60" value="30" step="1">
+                <div class="value"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide five">
+    <div class="title">Variable Update Rate</div>
+    <div id="variableupdaterate" class="demoGroup">
         <div class="stats">
             <div class="stat fpsContainer">
                 <div>Frames Per Second</div>
@@ -98,20 +123,20 @@
         <div class="canvasContainer"></div>
         <div class="controls">
             <div class="controlGroup js-fps">
-                <label for="euler1-fps">FPS</label>
-                <input id="euler1-fps" type="range" min="0" max="60" value="30" step="1">
+                <label for="variableupdaterate-fps">FPS</label>
+                <input id="variableupdaterate-fps" type="range" min="1" max="60" value="30" step="1">
                 <div class="value"></div>
             </div>
             <div class="controlGroup js-ups">
-                <label for="euler1-ups">UPS</label>
-                <input id="euler1-ups" type="range" min="0" max="60" value="30" step="1">
+                <label for="variableupdaterate-ups">UPS</label>
+                <input id="variableupdaterate-ups" type="range" min="1" max="60" value="30" step="1">
                 <div class="value"></div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="slide five">
+<div class="slide six">
     <div class="title">Request Animation Frame</div>
     <div id="raf" class="demoGroup">
         <div class="stats">

@@ -1,25 +1,20 @@
 import { createSquare, easyCanvas, renderRect, updateRect } from './utils';
 import SPS from './sps';
 
-const baseId = '#euler1';
+const baseId = '#fixedupdaterate';
 
 const fpsSliderEl = document.querySelector(`${baseId} .js-fps input`);
 const fpsValueEl = document.querySelector(`${baseId} .js-fps .value`);
-const upsSliderEl = document.querySelector(`${baseId} .js-ups input`);
-const upsValueEl = document.querySelector(`${baseId} .js-ups .value`);
 const ppsEl = document.querySelector(`${baseId} .pps`);
-
-let duration = 100;
 
 let desiredFps = 30;
 let desiredUps = 30;
 
 function init() {
-    if (fpsSliderEl === null || fpsValueEl === null || upsSliderEl === null || upsValueEl === null) {
+    if (fpsSliderEl === null || fpsValueEl === null) {
         throw new Error("Element missing.")
     }
 
-    fpsSliderEl.innerHTML = duration.toString();
     fpsSliderEl.addEventListener('change', (event) => {
         if (event.target instanceof HTMLInputElement) {
             desiredFps = parseInt(event.target.value);
@@ -27,15 +22,6 @@ function init() {
         fpsValueEl.innerHTML = desiredFps.toString();
     })
     fpsValueEl.innerHTML = desiredFps.toString();
-
-    upsSliderEl.innerHTML = duration.toString();
-    upsSliderEl.addEventListener('change', (event) => {
-        if (event.target instanceof HTMLInputElement) {
-            desiredUps = parseInt(event.target.value);
-        }
-        upsValueEl.innerHTML = desiredUps.toString();
-    })
-    upsValueEl.innerHTML = desiredUps.toString();
 }
 
 export default function(): void {
@@ -48,24 +34,29 @@ export default function(): void {
 
     const square = createSquare();
 
-    const distance = 15;
+    const distance = 30;
 
-    function step() {
+    function update(dt: number) {
         ups.begin();
+        updateRect(square, distance * dt, element);
+        ups.end();
+        setTimeout(() => {
+            update(1);
+        }, 1000 / desiredUps);
+    }
+
+    function render() {
         fps.begin();
         context.clearRect(0, 0, element.width, element.height);
-
-        updateRect(square, distance, element);
         renderRect(square, context);
 
         if (ppsEl) {
-            ppsEl.innerHTML = (Math.round(distance * (1000 / duration))).toString();
+            ppsEl.innerHTML = (distance * desiredUps).toString();
         }
 
-        ups.end();
         fps.end();
-        setTimeout(step, duration);
+        setTimeout(render, 1000 / desiredFps);
     }
-
-    step();
+    update(1);
+    render();
 }
