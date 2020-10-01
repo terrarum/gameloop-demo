@@ -1,7 +1,7 @@
 import { createSquare, easyCanvas, renderRect, updateRect } from './utils';
 import SPS from './sps';
 
-const baseId = '#variableupdaterate';
+const baseId = '#euler';
 
 const fpsSliderEl = document.querySelector(`${baseId} .js-fps input`);
 const fpsValueEl = document.querySelector(`${baseId} .js-fps .value`);
@@ -55,7 +55,9 @@ export default function(): void {
 
     function render() {
         fps.begin();
-        context.clearRect(0, 0, element.width, element.height);
+        context.fillStyle = 'gold';
+        context.fillRect(0, 0, element.width, element.height);
+
         renderRect(square, context);
 
         if (ppsEl) {
@@ -65,6 +67,6 @@ export default function(): void {
         fps.end();
         setTimeout(render, 1000 / desiredFps);
     }
-    update();
+    update(1);
     render();
 }

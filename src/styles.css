@@ -37,6 +37,12 @@ label {
   padding: 5px;
 }
 
+.title.small {
+  text-align: center;
+  font-size: 12px;
+  font-style: italic;
+}
+
 .demoGroup {
   margin-bottom: 10px;
   display: flex;

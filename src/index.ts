@@ -6,6 +6,7 @@ import simpleStepper from './simplestepper';
 import updateRender from './updaterender';
 import fixedupdaterate from './fixedupdaterate';
 import variableupdaterate from './variableupdaterate';
+import euler from './euler';
 import raf from './raf';
 
 buttons();
@@ -15,4 +16,5 @@ updateRender();
 simpleStepper();
 fixedupdaterate();
 variableupdaterate();
+euler();
 raf();

@@ -8,17 +8,19 @@
 
 <body>
 <div class="contents">
-    <button id="one">One</button>
-    <button id="two">Two</button>
-    <button id="three">Three</button>
-    <button id="four">Four</button>
-    <button id="five">Five</button>
-    <button id="six">Six</button>
+    <button id="one">Intro</button>
+    <button id="two">Rect</button>
+    <button id="three">Stepper</button>
+    <button id="four">FUPS</button>
+    <button id="five">VUPS</button>
+    <button id="six">Oil</button>
+    <button id="seven">RAF</button>
     <button id="all">All</button>
 </div>
 
 <div class="slide one">
     <div class="title">Behold, a Video Game</div>
+    <div class="title small">&nbsp;</div>
     <div id="intro" class="demoGroup">
         <div class="stats"></div>
         <div class="canvasContainer"></div>
@@ -29,6 +31,7 @@
 
 <div class="slide two hidden">
     <div class="title">A Square</div>
+    <div class="title small">&nbsp;</div>
     <div id="updaterender" class="demoGroup">
         <div class="stats">
             <div class="buttons">
@@ -45,6 +48,7 @@
 
 <div class="slide three hidden">
     <div class="title">Simple Stepper</div>
+    <div class="title small">&nbsp;</div>
     <div id="simplestepper" class="demoGroup">
         <div class="stats">
             <div class="stat fpsContainer">
@@ -71,8 +75,9 @@
     </div>
 </div>
 
-<div class="slide four">
+<div class="slide four hidden">
     <div class="title">Fixed Update Rate</div>
+    <div class="title small">&nbsp;</div>
     <div id="fixedupdaterate" class="demoGroup">
         <div class="stats">
             <div class="stat fpsContainer">
@@ -99,8 +104,9 @@
     </div>
 </div>
 
-<div class="slide five">
+<div class="slide five hidden">
     <div class="title">Variable Update Rate</div>
+    <div class="title small">&nbsp;</div>
     <div id="variableupdaterate" class="demoGroup">
         <div class="stats">
             <div class="stat fpsContainer">
@@ -137,6 +143,44 @@
 </div>
 
 <div class="slide six">
+    <div class="title">Euler Integration</div>
+    <div class="title small">Or: How I Resigned Myself to Learning Mathematics</div>
+    <div id="euler" class="demoGroup">
+        <div class="stats">
+            <div class="stat fpsContainer">
+                <div>Frames Per Second</div>
+                <div class="fps">0</div>
+            </div>
+            <div class="stat upsContainer">
+                <div>Updates Per Second</div>
+                <div class="ups">0</div>
+            </div>
+            <div class="stat upsContainer">
+                <div>Pixels Per Second</div>
+                <div class="pps">0</div>
+            </div>
+            <div class="buttons">
+                <button class="play">Play/Pause</button>
+                <button class="reset">Reset</button>
+            </div>
+        </div>
+        <div class="canvasContainer"></div>
+        <div class="controls">
+            <div class="controlGroup js-fps">
+                <label for="euler-fps">FPS</label>
+                <input id="euler-fps" type="range" min="1" max="60" value="30" step="1">
+                <div class="value"></div>
+            </div>
+            <div class="controlGroup js-ups">
+                <label for="euler-ups">UPS</label>
+                <input id="euler-ups" type="range" min="1" max="60" value="30" step="1">
+                <div class="value"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide seven">
     <div class="title">Request Animation Frame</div>
     <div id="raf" class="demoGroup">
         <div class="stats">
