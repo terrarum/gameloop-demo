@@ -4,11 +4,13 @@ import buttons from './slides';
 import intro from './intro';
 import simpleStepper from './simplestepper';
 import updateRender from './updaterender';
+import euler1 from './euler1';
 import raf from './raf';
 
 buttons();
 
 intro();
-simpleStepper();
 updateRender();
+simpleStepper();
+euler1();
 raf();

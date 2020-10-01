@@ -45,11 +45,6 @@ html, body {
   height: 28px;
 }
 
-.label {
-  font-size: 18px;
-  padding-right: 5px;
-}
-
 .stats {
   width: 250px;
   display: flex;
