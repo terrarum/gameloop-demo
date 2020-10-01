@@ -1,6 +1,6 @@
 import './styles.css';
 
-import buttons from './buttons';
+import buttons from './slides';
 import intro from './intro';
 import simpleStepper from './simplestepper';
 import updateRender from './updaterender';
