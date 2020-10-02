@@ -142,7 +142,7 @@ export default function(): void {
         ups.begin();
         if (eulerise) {
             if (dtEl instanceof HTMLElement) {
-                dtEl.innerText = `${deltaTime}ms`;
+                dtEl.innerText = `${deltaTime.toFixed(2)}ms`;
             }
             const stepDistance = desiredPps * (deltaTime / 1000);
             updateRect(square, stepDistance, element);

@@ -220,23 +220,23 @@
         <div class="canvasContainer"></div>
         <div class="controls">
             <div class="controlGroup js-fps">
-                <label for="euler-fps">FPS</label>
-                <input id="euler-fps" type="range" min="1" max="60" value="30" step="1">
+                <label for="eulerclean-fps">FPS</label>
+                <input id="eulerclean-fps" type="range" min="1" max="60" value="30" step="1">
                 <div class="value"></div>
             </div>
             <div class="controlGroup js-ups">
-                <label for="euler-ups">UPS</label>
-                <input id="euler-ups" type="range" min="1" max="60" value="30" step="1">
+                <label for="eulerclean-ups">UPS</label>
+                <input id="eulerclean-ups" type="range" min="1" max="60" value="30" step="1">
                 <div class="value"></div>
             </div>
             <div class="controlGroup js-dist disabled">
-                <label for="euler-dist">Dist</label>
-                <input id="euler-dist" type="range" min="1" max="60" value="30" step="1">
+                <label for="eulerclean-dist">Dist</label>
+                <input id="eulerclean-dist" type="range" min="1" max="60" value="30" step="1">
                 <div class="value"></div>
             </div>
             <div class="controlGroup js-dist2">
-                <label for="euler-dist2">PPS</label>
-                <input id="euler-dist2" type="range" min="0" max="1000" value="900" step="50">
+                <label for="eulerclean-dist2">PPS</label>
+                <input id="eulerclean-dist2" type="range" min="0" max="1000" value="900" step="50">
                 <div class="value"></div>
             </div>
         </div>
@@ -245,6 +245,7 @@
 
 <div class="slide eight">
     <div class="title">Request Animation Frame</div>
+    <div class="title small">&nbsp;</div>
     <div id="raf" class="demoGroup">
         <div class="stats">
             <div class="stat fpsContainer">
@@ -255,16 +256,58 @@
                 <div>Updates Per Second</div>
                 <div class="ups">0</div>
             </div>
-            <div class="stat upsContainer">
+            <div class="stat ppsContainer">
                 <div>Pixels Per Second</div>
                 <div class="pps">0</div>
+            </div>
+            <div class="stat dtContainer">
+                <div>Delta Time</div>
+                <div class="dt">0ms</div>
             </div>
         </div>
         <div class="canvasContainer"></div>
         <div class="controls">
+            <div class="controlGroup js-ups">
+                <label for="raf-ups">UPS</label>
+                <input id="raf-ups" type="range" min="1" max="60" value="30" step="1">
+                <div class="value"></div>
+            </div>
+            <div class="controlGroup js-dist disabled">
+                <label for="raf-dist">Dist</label>
+                <input id="raf-dist" type="range" min="1" max="60" value="30" step="1">
+                <div class="value"></div>
+            </div>
+            <div class="controlGroup js-dist2">
+                <label for="raf-dist2">PPS</label>
+                <input id="raf-dist2" type="range" min="0" max="1000" value="900" step="50">
+                <div class="value"></div>
+            </div>
         </div>
     </div>
 </div>
+
+<!--<div class="slide eight">-->
+<!--    <div class="title">Request Animation Frame</div>-->
+<!--    <div id="raf" class="demoGroup">-->
+<!--        <div class="stats">-->
+<!--            <div class="stat fpsContainer">-->
+<!--                <div>Frames Per Second</div>-->
+<!--                <div class="fps">0</div>-->
+<!--            </div>-->
+<!--            <div class="stat upsContainer">-->
+<!--                <div>Updates Per Second</div>-->
+<!--                <div class="ups">0</div>-->
+<!--            </div>-->
+<!--            <div class="stat upsContainer">-->
+<!--                <div>Pixels Per Second</div>-->
+<!--                <div class="pps">0</div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="canvasContainer"></div>-->
+<!--        <div class="controls">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 <script src="src/index.ts"></script>
 </body>
 </html>

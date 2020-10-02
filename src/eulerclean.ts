@@ -1,10 +1,12 @@
 import { createSquare, easyCanvas, renderRect, updateRect } from './utils';
 import SPS from './sps';
 
-const baseId = '#raf';
+const baseId = '#eulerclean';
 
 const dtContainer = document.querySelector(`${baseId} .dtContainer`);
 const dtEl = document.querySelector(`${baseId} .dt`);
+const fpsSliderEl = document.querySelector(`${baseId} .js-fps input`);
+const fpsValueEl = document.querySelector(`${baseId} .js-fps .value`);
 const upsSliderEl = document.querySelector(`${baseId} .js-ups input`);
 const upsValueEl = document.querySelector(`${baseId} .js-ups .value`);
 const distSliderEl = document.querySelector(`${baseId} .js-dist input`);
@@ -23,12 +25,21 @@ let deltaTime = 0;
 let stepDistance = 0;
 
 function init() {
-    if (!upsSliderEl || !upsValueEl ||
+    if (!fpsSliderEl || !fpsValueEl ||
+        !upsSliderEl || !upsValueEl ||
         !distSliderEl || !distValueEl || !distGroupEl ||
         !dist2SliderEl || !dist2ValueEl ||
         !dist2GroupEl || !dtEl || !dtContainer) {
-        throw new Error("Element missing.");
+        throw new Error("Element missing.")
     }
+
+    fpsSliderEl.addEventListener('change', (event) => {
+        if (event.target instanceof HTMLInputElement) {
+            desiredFps = parseInt(event.target.value);
+        }
+        fpsValueEl.innerHTML = desiredFps.toString();
+    })
+    fpsValueEl.innerHTML = desiredFps.toString();
 
     upsSliderEl.addEventListener('change', (event) => {
         if (event.target instanceof HTMLInputElement) {
@@ -67,22 +78,29 @@ export default function(): void {
 
     const square = createSquare();
 
+    let last = performance.now();
+    let now = last;
 
-    function update(deltaTime: number) {
+    function update() {
         ups.begin();
 
-        stepDistance = desiredPps * (deltaTime / 1000););
-
+        now = performance.now();
+        deltaTime = now - last;
+        stepDistance = desiredPps * (deltaTime / 1000);
         updateRect(square, stepDistance, element);
 
         eulerPpsDisplay = stepDistance * desiredUps;
 
         ups.end();
+        setTimeout(update, 1000 / desiredUps);
+
+        last = now;
     }
 
     function render() {
         fps.begin();
-        context.clearRect(0, 0, element.width, element.height);
+        context.fillStyle = 'gold';
+        context.fillRect(0, 0, element.width, element.height);
 
         renderRect(square, context);
 
@@ -100,18 +118,8 @@ export default function(): void {
         }
 
         fps.end();
+        setTimeout(render, 1000 / desiredFps);
     }
-
-    let last = performance.now();
-
-    function step(now: number) {
-        deltaTime = now - last;
-
-        update(deltaTime);
-        render();
-
-        last = now;
-        window.requestAnimationFrame(step);
-    }
-    window.requestAnimationFrame(step);
+    update();
+    render();
 }
