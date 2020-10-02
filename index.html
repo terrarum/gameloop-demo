@@ -68,7 +68,7 @@
         <div class="controls">
             <div class="controlGroup js-speed">
                 <label for="simpstep-speed">MS</label>
-                <input id="simpstep-speed" type="range" min="1" max="1000" value="100" step="10">
+                <input id="simpstep-speed" type="range" min="1" max="100" value="50" step="1">
                 <div class="value"></div>
             </div>
         </div>
@@ -121,10 +121,6 @@
                 <div>Pixels Per Second</div>
                 <div class="pps">0</div>
             </div>
-            <div class="buttons">
-                <button class="play">Play/Pause</button>
-                <button class="reset">Reset</button>
-            </div>
         </div>
         <div class="canvasContainer"></div>
         <div class="controls">
@@ -159,9 +155,9 @@
                 <div>Pixels Per Second</div>
                 <div class="pps">0</div>
             </div>
-            <div class="buttons">
-                <button class="play">Play/Pause</button>
-                <button class="reset">Reset</button>
+            <div class="stat dtContainer hidden">
+                <div>Delta Time</div>
+                <div class="dt">0ms</div>
             </div>
         </div>
         <div class="canvasContainer"></div>
@@ -175,6 +171,24 @@
                 <label for="euler-ups">UPS</label>
                 <input id="euler-ups" type="range" min="1" max="60" value="30" step="1">
                 <div class="value"></div>
+            </div>
+            <div class="controlGroup js-dist">
+                <label for="euler-dist">Dist</label>
+                <input id="euler-dist" type="range" min="1" max="60" value="30" step="1">
+                <div class="value"></div>
+            </div>
+            <div class="controlGroup js-dist2 hidden">
+                <label for="euler-dist2">PPS</label>
+                <input id="euler-dist2" type="range" min="0" max="1000" value="900" step="50">
+                <div class="value"></div>
+            </div>
+            <div class="controlGroup">
+                <button class="euler-reset">Reset</button>
+                <button class="euler-smooth">Smooooth</button>
+            </div>
+            <div class="controlGroup">
+                <label for="euler-check">Eulerise</label>
+                <input type="checkbox" id="euler-check" class="eulerise">
             </div>
         </div>
     </div>
@@ -195,10 +209,6 @@
             <div class="stat upsContainer">
                 <div>Pixels Per Second</div>
                 <div class="pps">0</div>
-            </div>
-            <div class="buttons">
-                <button class="play">Play/Pause</button>
-                <button class="reset">Reset</button>
             </div>
         </div>
         <div class="canvasContainer"></div>

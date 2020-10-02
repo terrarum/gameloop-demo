@@ -18,7 +18,11 @@ label {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+.disabled {
+  color: gray;
 }
 
 .fps div, .ups div {
@@ -84,4 +88,12 @@ label {
   width: 50%;
   margin: 0 5px 5px 0;
   text-align: center;
+}
+
+.controlGroup button {
+  margin-right: 5px
+}
+
+.euler-smooth {
+  font-style: italic;
 }

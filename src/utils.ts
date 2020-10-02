@@ -18,7 +18,7 @@ export function renderRect(rect: Rect, context: CanvasRenderingContext2D) {
 
 export function createSquare(): Rect {
     return {
-        x: 350,
+        x: 400,
         y: 50,
         width: 100,
         height: 100,
