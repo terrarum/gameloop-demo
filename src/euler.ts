@@ -116,7 +116,7 @@ function init() {
             else {
                 distGroupEl.classList.remove('disabled');
                 dist2GroupEl.classList.add('hidden');
-                dtContainer.classList.remove('disabled');
+                dtContainer.classList.add('hidden');
             }
         }
     });
