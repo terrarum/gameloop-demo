@@ -8,8 +8,7 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "lodash": "^4.17.20",
-    "simple-gameloop": "^1.0.5"
+    "simple-gameloop": "^2.0.0-alpha"
   },
   "devDependencies": {
     "@babel/core": "7.2.0",
