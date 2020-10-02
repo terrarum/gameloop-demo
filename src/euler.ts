@@ -157,10 +157,10 @@ export default function(): void {
         else {
             updateRect(square, distance, element);
         }
-        ups.end();
-        setTimeout(update, 1000 / desiredUps);
-
         last = now;
+        ups.end();
+
+        setTimeout(update, 1000 / desiredUps);
     }
 
     function render() {

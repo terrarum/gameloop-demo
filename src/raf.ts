@@ -15,9 +15,8 @@ const dist2ValueEl = document.querySelector(`${baseId} .js-dist2 .value`);
 const dist2GroupEl = document.querySelector(`${baseId} .js-dist2`);
 const ppsEl = document.querySelector(`${baseId} .pps`);
 
-let desiredFps = 30;
 let desiredUps = 30;
-let desiredPps = 900;
+let desiredPps = 500;
 let distance = 30;
 let deltaTime = 0;
 let stepDistance = 0;
@@ -71,7 +70,7 @@ export default function(): void {
     function update(deltaTime: number) {
         ups.begin();
 
-        stepDistance = desiredPps * (deltaTime / 1000););
+        stepDistance = desiredPps * (deltaTime / 1000);
 
         updateRect(square, stepDistance, element);
 

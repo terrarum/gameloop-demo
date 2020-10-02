@@ -86,15 +86,19 @@ export default function(): void {
 
         now = performance.now();
         deltaTime = now - last;
+
         stepDistance = desiredPps * (deltaTime / 1000);
+        // stepDistance = 500 * (16.66ms / 1000ms) = 500 * 0.01666 = 8.33 pixels per update
+        // 8.33 * 60fps = 499.8px
+
         updateRect(square, stepDistance, element);
 
         eulerPpsDisplay = stepDistance * desiredUps;
 
-        ups.end();
-        setTimeout(update, 1000 / desiredUps);
-
         last = now;
+        ups.end();
+
+        setTimeout(update, 1000 / desiredUps);
     }
 
     function render() {
